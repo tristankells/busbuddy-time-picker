@@ -5,6 +5,7 @@ import CheckboxLabels from './components/CheckboxLabels';
 import $ from "jquery";
 import SubmitButton from "./components/SubmitButton"
 import qs from 'qs'
+const MESSENGER_API_URL = 'https://api.zappy.chat'
 
 class App extends Component {
   constructor(props) {
@@ -129,7 +130,7 @@ class App extends Component {
     ////////AJAX
     $.ajax({
       method: "PUT",
-      url: "https://75ab1e69.ngrok.io/user-settings",
+      url: `${MESSENGER_API_URL}/user-settings`,
       data: JSON.stringify({
         userSettings
       }),

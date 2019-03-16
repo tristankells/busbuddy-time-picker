@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Edit Schedule",
+  "name": "Zappy Messenger Frontend",
   "icons": [
     {
       "src": "favicon.ico",
