@@ -10,7 +10,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      officeArrivalTime: "7:30",
+      isLoading: true,
+      officeArrivalTime: "01:30",
       senderId: qs.parse(window.location.search, { ignoreQueryPrefix: true }).senderId,
       isMondayEnabled: false,
       isTuesdayEnabled: false,
@@ -21,6 +22,7 @@ class App extends Component {
       isSundayEnabled: false
     }
 
+   
     //Bind 'this' to functions 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.mondayClick = this.mondayClick.bind(this);
@@ -31,8 +33,29 @@ class App extends Component {
     this.saturdayClick = this.saturdayClick.bind(this);
     this.sundayClick = this.sundayClick.bind(this);
     this.setTime = this.setTime.bind(this);
+
+
+
   }
 
+  componentDidMount = () => {
+
+    $.get("//75ab1e69.ngrok.io/user-settings?senderId=2052050591581851", (data) => {
+      console.log(data);
+      this.setState({
+        isMondayEnabled: data.userSettings.isMondayEnabled,
+        isTuesdayEnabled: data.userSettings.isTuesdayEnabled,
+        isWednesdayEnabled: data.userSettings.isWednesdayEnabled,
+        isThursdayEnabled: data.userSettings.isThursdayEnabled,
+        isFridayEnabled: data.userSettings.isFridayEnabled,
+        isSaturdayEnabled: data.userSettings.isSaturdayEnabled,
+        isSundayEnabled: data.userSettings.isSundayEnabled,
+        officeArrivalTime: data.userSettings.officeArrivalTime
+      })
+    }).done(res => {
+      console.log(this.state.officeArrivalTime);
+    })
+  }
 
   setTime(newTime) {
     this.setState({
@@ -43,7 +66,7 @@ class App extends Component {
   mondayClick() {
     this.setState({
       isMondayEnabled: this.state.isMondayEnabled ? false : true
-    }, function() {
+    }, function () {
       console.log(this.state.isMondayEnabled);
     })
   }
@@ -101,7 +124,7 @@ class App extends Component {
       isFridayEnabled: this.state.isFridayEnabled,
       isSaturdayEnabled: this.state.isSaturdayEnabled,
       isSundayEnabled: this.state.isSundayEnabled,
-      senderId : this.state.senderId
+      senderId: this.state.senderId
     };
     ////////AJAX
     $.ajax({
@@ -120,6 +143,9 @@ class App extends Component {
   }
 
   render() {
+    if (this.state.isLoading) {
+      return null;
+    }
     return (
       <div className="App">
         <header className="App-header">
@@ -131,8 +157,15 @@ class App extends Component {
             fridayClick={this.fridayClick}
             saturdayClick={this.saturdayClick}
             sundayClick={this.sundayClick}
+            monday={this.state.isMondayEnabled}
+            tuesday={this.state.isTuesdayEnabled}
+            wednesday={this.state.isWednesdayEnabled}
+            thursday={this.state.isThursdayEnabled}
+            friday={this.state.isFridayEnabled}
+            saturday={this.state.isSaturdayEnabled}
+            sunday={this.state.isSundayEnabled}
           />
-          <TimePickers setTime={this.setTime}  />
+          <TimePickers orgiginalTime={this.state.officeArrivalTime} setTime={this.setTime} />
           <SubmitButton handleSubmit={this.handleSubmit} />
         </header>
       </div>

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: rgb(231, 232, 236);
 }
 
 .App-logo {
@@ -58,6 +59,7 @@
     font-weight: bolder;
     align-content: initial;
     box-shadow: 0px 0px 0px 1.5px rgb(3, 3, 3);
+    outline: none;
 }
 
 .btn-group{
