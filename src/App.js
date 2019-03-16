@@ -5,12 +5,14 @@ import TimePickers from "./components/TimePickers"
 import CheckboxLabels from './components/CheckboxLabels';
 import $ from "jquery";
 import SubmitButton from "./components/SubmitButton"
+import qs from 'qs'
 
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       officeArrivalTime: "7:30",
+      senderId: qs.parse(window.location.search, { ignoreQueryPrefix: true }).senderId,
       isMondayEnabled: false,
       isTuesdayEnabled: false,
       isWednesdayEnabled: false,
@@ -18,19 +20,19 @@ class App extends Component {
       isFridayEnabled: false,
       isSaturdayEnabled: false,
       isSundayEnabled: false
-    ,
-    userId : 1
     }
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.mondayClick = this.mondayClick.bind(this);
+
   }
 
 
   setTime(newTime) {
     console.log("Time is set");
     this.setState({
-      officeArrivalTime : !this.state.isMondayEnabled
-    }) 
+      officeArrivalTime: !this.state.isMondayEnabled
+    })
     console.log(this.state.officeArrivalTime);
   }
 
@@ -38,51 +40,51 @@ class App extends Component {
     console.log("Monday is clicked");
     console.log(this.state.isMondayEnabled);
     this.setState({
-      isMondayEnabled : !this.state.isMondayEnabled
-    }) 
-    
+      isMondayEnabled: !this.state.isMondayEnabled
+    })
+
   }
 
 
   tuesdayClick() {
     this.setState({
-      isMondayEnabled : !this.state.isMondayEnabled
-    }) 
+      isMondayEnabled: !this.state.isMondayEnabled
+    })
   }
 
 
- wednesdayClick() {
+  wednesdayClick() {
     this.setState({
-      isMondayEnabled : !this.state.isMondayEnabled
-    }) 
+      isMondayEnabled: !this.state.isMondayEnabled
+    })
   }
 
 
   thursdayClick() {
     this.setState({
-      isMondayEnabled : !this.state.isMondayEnabled
-    }) 
+      isMondayEnabled: !this.state.isMondayEnabled
+    })
   }
 
 
   fridayClick() {
     this.setState({
-      isMondayEnabled : !this.state.isMondayEnabled
-    }) 
+      isMondayEnabled: !this.state.isMondayEnabled
+    })
   }
 
 
   saturdayClick() {
     this.setState({
-      isMondayEnabled : !this.state.isMondayEnabled
-    }) 
+      isMondayEnabled: !this.state.isMondayEnabled
+    })
   }
 
 
   sundayClick() {
     this.setState({
-      isMondayEnabled : !this.state.isMondayEnabled
-    }) 
+      isMondayEnabled: !this.state.isMondayEnabled
+    })
   }
 
   handleSubmit() {
@@ -95,7 +97,7 @@ class App extends Component {
       method: "PUT",
       url: "https://75ab1e69.ngrok.io/user-settings",
       data: JSON.stringify({
-        userSettings ,
+        userSettings,
         userId
       }),
       headers: {
@@ -115,8 +117,8 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <CheckboxLabels 
-          mondayClick = {this.mondayClick}
+          <CheckboxLabels
+            mondayClick={this.mondayClick}
           />
           <TimePickers />
           <SubmitButton handleSubmit={this.handleSubmit} />
