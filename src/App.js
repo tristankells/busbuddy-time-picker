@@ -143,8 +143,6 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <a href="zappy://zappy.chat
-        "> CLick me</a>
           <DayCheckboxGroup
             mondayClick={this.mondayClick}
             tuesdayClick={this.tuesdayClick}
