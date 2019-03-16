@@ -58,6 +58,7 @@
     text-decoration:bold;
     align-content: initial;
     box-shadow: 0px 0px 0px 1px rgb(3, 3, 3);
+    outline: none;
 }
 
 .btn-group{
