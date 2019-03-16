@@ -43,19 +43,19 @@ class CheckboxLabels extends React.Component {
         />
         <FormControlLabel
           control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedTue" />
+            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedTue" onClick = {this.props.tuesdayClick}/>
           }
           label="T"
         />
         <FormControlLabel
           control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedWed" />
+            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedWed"onClick = {this.props.wednesdayClick} />
           }
           label="W"
         />
         <FormControlLabel
           control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="cehckedThu" />
+            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="cehckedThu" onClick = {this.props.thursdayClick}/>
           }
           label="T"
         />
@@ -64,19 +64,19 @@ class CheckboxLabels extends React.Component {
       <FormGroup className="FormGroup" row>
         <FormControlLabel
           control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedFri" />
+            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedFri" onClick = {this.props.fridayClick} />
           }
           label="F"
         />
         <FormControlLabel
           control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedSat" />
+            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedSat" onClick = {this.props.saturdayClick}/>
           }
           label="S"
         />
         <FormControlLabel
           control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedSun" />
+            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedSun" onClick = {this.props.sundayClick}/>
           }
           label="S"
         />

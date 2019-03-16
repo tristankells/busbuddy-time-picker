@@ -18,6 +18,12 @@ const styles = theme => ({
 function TimePickers(props) {
   const { classes } = props;
 
+
+  function setNewTime(event) {
+    console.log("New time is " + event.target.value)
+    props.setTime(event.target.value);
+  }
+
   return (
     <form className={classes.container} noValidate>
       <TextField
@@ -32,6 +38,7 @@ function TimePickers(props) {
         inputProps={{
           step: 300, // 5 min
         }}
+        onChange={setNewTime}
       />
     </form>
   );
