@@ -5,13 +5,14 @@ import TimePickers from "./components/TimePickers"
 import CheckboxLabels from './components/CheckboxLabels';
 import $ from "jquery";
 import SubmitButton from "./components/SubmitButton"
+import qs from 'qs'
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { userSettings : {
       officeArrivalTime: "7:30",
-      userId: 1,
+      senderId: qs.parse(window.location.search, { ignoreQueryPrefix: true }).senderId,
       isMondayEnabled: false,
       isTuesdayEnabled: false,
       isWednesdayEnabled: false,
@@ -20,7 +21,6 @@ class App extends Component {
       isSaturdayEnabled: false,
       isSundayEnabled: false
     },
-    userId : 1
     }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
