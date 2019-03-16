@@ -7,6 +7,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Favorite from '@material-ui/icons/FiberManualRecord';
 import FavoriteBorder from '@material-ui/icons/FiberManualRecordOutlined';
+import DayButton from './DayButton';
 
 const styles = {
   root: {
@@ -33,54 +34,15 @@ class CheckboxLabels extends React.Component {
   render() {
     // const { classes } = this.props;
 
-    return (<div>
-      <FormGroup className="FormGroup" row>
-        <FormControlLabel
-          control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedMon" onClick = {this.props.mondayClick} />
-          }
-          label="M"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedTue" onClick = {this.props.tuesdayClick}/>
-          }
-          label="T"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedWed"onClick = {this.props.wednesdayClick} />
-          }
-          label="W"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="cehckedThu" onClick = {this.props.thursdayClick}/>
-          }
-          label="T"
-        />
-      </FormGroup>
-
-      <FormGroup className="FormGroup" row>
-        <FormControlLabel
-          control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedFri" onClick = {this.props.fridayClick} />
-          }
-          label="F"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedSat" onClick = {this.props.saturdayClick}/>
-          }
-          label="S"
-        />
-        <FormControlLabel
-          control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedSun" onClick = {this.props.sundayClick}/>
-          }
-          label="S"
-        />
-      </FormGroup>
+    return (<div className="btn-group">
+      <DayButton onClick = {this.props.mondayClick} text="M"></DayButton>
+      <DayButton onClick = {this.props.tuesdayClick} text="T"></DayButton>
+      <DayButton onClick = {this.props.wednesdayClick} text="W"></DayButton>
+      <DayButton onClick = {this.props.thursdayClick} text="T"></DayButton>
+      <DayButton onClick = {this.props.fridayClick} text="F"></DayButton>
+      <DayButton onClick = {this.props.saturdayClick} text="S"></DayButton>
+      <DayButton onClick = {this.props.sundayClick} text="S"></DayButton>
+      
     </div>
     );
   }
