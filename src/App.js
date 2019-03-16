@@ -21,17 +21,15 @@ class App extends Component {
       isSaturdayEnabled: false,
       isSundayEnabled: false
     }
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.mondayClick = this.mondayClick.bind(this);
-
   }
 
 
   setTime(newTime) {
     console.log("Time is set");
     this.setState({
-      officeArrivalTime: !this.state.isMondayEnabled
+      officeArrivalTime: newTime
     })
     console.log(this.state.officeArrivalTime);
   }
@@ -89,8 +87,17 @@ class App extends Component {
 
   handleSubmit() {
     console.log("Button Pressed");
-    var userSettings = this.state.userSettings;
-    var userId = this.state.userId;
+    var userSettings = {
+      officeArrivalTime: this.state.officeArrivalTime,
+      isMondayEnabled: this.state.isMondayEnabled,
+      isTuesdayEnabled: this.state.isTuesdayEnabled,
+      isWednesdayEnabled: this.state.isWednesdayEnabled,
+      isThursdayEnabled: this.state.isThursdayEnabled,
+      isFridayEnabled: this.state.isFridayEnabled,
+      isSaturdayEnabled: this.state.isSaturdayEnabled,
+      isSundayEnabled: this.state.isSundayEnabled
+    };
+    var userId = this.state.senderId;
 
     ////////AJAX
     $.ajax({
@@ -120,7 +127,7 @@ class App extends Component {
           <CheckboxLabels
             mondayClick={this.mondayClick}
           />
-          <TimePickers />
+          <TimePickers setTime={newtime => this.setTime} />
           <SubmitButton handleSubmit={this.handleSubmit} />
         </header>
       </div>
