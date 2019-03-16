@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import TimePickers from "./components/TimePickers"
 import CheckboxLabels from './components/CheckboxLabels';
 import $ from "jquery";
 import SubmitButton from "./components/SubmitButton"
 import qs from 'qs'
-import Heading from "./components/Heading.tsx";
 
 class App extends Component {
   constructor(props) {

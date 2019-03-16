@@ -5,12 +5,12 @@ import green from '@material-ui/core/colors/green';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import Favorite from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import Favorite from '@material-ui/icons/FiberManualRecord';
+import FavoriteBorder from '@material-ui/icons/FiberManualRecordOutlined';
 
 const styles = {
   root: {
-    color: green[600],
+    color: [600],
     '&$checked': {
       color: green[500],
     },
