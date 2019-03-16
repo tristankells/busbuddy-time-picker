@@ -25,8 +25,6 @@ function TimePickers(props) {
     props.setTime(event.target.value);
   }
 
-  
-console.log('original time',props.orgiginalTime)
   return (
     <form className={classes.container} noValidate key={props.orgiginalTime}>
       <TextField
