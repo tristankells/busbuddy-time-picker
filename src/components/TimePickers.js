@@ -39,6 +39,7 @@ function TimePickers(props) {
           step: 300, // 5 min
         }}
         onChange={setNewTime}
+        style = {{width: 250}} //assign the width as your requirement
       />
     </form>
   );

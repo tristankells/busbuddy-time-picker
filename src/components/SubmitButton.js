@@ -14,10 +14,11 @@ const styles = theme => ({
 
 function SubmitButton(props) {
   const { classes } = props;
-
   return (
     <div>
-      <Button onClick={props.handleSubmit} variant="contained" className={classes.button}>
+      <Button onClick={props.handleSubmit} variant="contained" className={classes.button}  
+      style = {{width: 250, background: "black", color:"white"}}
+      >
         Submit
       </Button>
     </div>
