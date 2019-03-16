@@ -33,40 +33,55 @@ class CheckboxLabels extends React.Component {
   render() {
     // const { classes } = this.props;
 
-    return (
-      <FormGroup row>
-          <FormControlLabel
+    return (<div>
+      <FormGroup className="FormGroup" row>
+        <FormControlLabel
           control={
-            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedMon" />
+            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedMon" onClick = {this.props.mondayClick} />
           }
-          label="Mon"
+          label="M"
         />
-                <FormControlLabel
+        <FormControlLabel
           control={
             <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedTue" />
           }
-          label="Tue"
+          label="T"
         />
-                <FormControlLabel
+        <FormControlLabel
           control={
             <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedWed" />
           }
-          label="Wed"
+          label="W"
         />
-                <FormControlLabel
+        <FormControlLabel
           control={
             <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="cehckedThu" />
           }
-          label="Thu"
+          label="T"
         />
+      </FormGroup>
+
+      <FormGroup className="FormGroup" row>
         <FormControlLabel
           control={
             <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedFri" />
           }
-          label="Fri"
+          label="F"
         />
-        
+        <FormControlLabel
+          control={
+            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedSat" />
+          }
+          label="S"
+        />
+        <FormControlLabel
+          control={
+            <Checkbox icon={<FavoriteBorder />} checkedIcon={<Favorite />} value="checkedSun" />
+          }
+          label="S"
+        />
       </FormGroup>
+    </div>
     );
   }
 }

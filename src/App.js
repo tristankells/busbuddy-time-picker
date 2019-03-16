@@ -9,9 +9,8 @@ import SubmitButton from "./components/SubmitButton"
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { userSettings : {
+    this.state = { 
       officeArrivalTime: "7:30",
-      userId: 1,
       isMondayEnabled: false,
       isTuesdayEnabled: false,
       isWednesdayEnabled: false,
@@ -19,12 +18,72 @@ class App extends Component {
       isFridayEnabled: false,
       isSaturdayEnabled: false,
       isSundayEnabled: false
-    },
+    ,
     userId : 1
     }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.mondayClick = this.mondayClick.bind(this);
   }
 
+
+  setTime(newTime) {
+    console.log("Time is set");
+    this.setState({
+      officeArrivalTime : !this.state.isMondayEnabled
+    }) 
+    console.log(this.state.officeArrivalTime);
+  }
+
+  mondayClick() {
+    console.log("Monday is clicked");
+    console.log(this.state.isMondayEnabled);
+    this.setState({
+      isMondayEnabled : !this.state.isMondayEnabled
+    }) 
+    
+  }
+
+
+  tuesdayClick() {
+    this.setState({
+      isMondayEnabled : !this.state.isMondayEnabled
+    }) 
+  }
+
+
+ wednesdayClick() {
+    this.setState({
+      isMondayEnabled : !this.state.isMondayEnabled
+    }) 
+  }
+
+
+  thursdayClick() {
+    this.setState({
+      isMondayEnabled : !this.state.isMondayEnabled
+    }) 
+  }
+
+
+  fridayClick() {
+    this.setState({
+      isMondayEnabled : !this.state.isMondayEnabled
+    }) 
+  }
+
+
+  saturdayClick() {
+    this.setState({
+      isMondayEnabled : !this.state.isMondayEnabled
+    }) 
+  }
+
+
+  sundayClick() {
+    this.setState({
+      isMondayEnabled : !this.state.isMondayEnabled
+    }) 
+  }
 
   handleSubmit() {
     console.log("Button Pressed");
@@ -57,8 +116,7 @@ class App extends Component {
             Edit <code>src/App.js</code> and save to reload.
           </p>
           <CheckboxLabels 
-          
-          
+          mondayClick = {this.mondayClick}
           />
           <TimePickers />
           <SubmitButton handleSubmit={this.handleSubmit} />

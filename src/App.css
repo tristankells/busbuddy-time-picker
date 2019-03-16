@@ -19,9 +19,18 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.FormGroup {
+  text-align: center;
+  padding: 10px;
+  justify-content: center;
+  margin-left: 16px;
 }
+
+.FormControlLabel{
+  text-align: center;
+}
+
 
 @keyframes App-logo-spin {
   from {
