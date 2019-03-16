@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import TimePickers from "./components/TimePickers"
-import CheckboxLabels from './components/CheckboxLabels';
+import DayCheckboxGroup from './components/DayCheckboxGroup';
 import $ from "jquery";
 import SubmitButton from "./components/SubmitButton"
 import qs from 'qs'
@@ -39,24 +39,24 @@ class App extends Component {
 
   }
 
-  componentDidMount = () => {
+  // componentDidMount = () => {
 
-    $.get("//75ab1e69.ngrok.io/user-settings?senderId=2052050591581851", (data) => {
-      console.log(data);
-      this.setState({
-        isMondayEnabled: data.userSettings.isMondayEnabled,
-        isTuesdayEnabled: data.userSettings.isTuesdayEnabled,
-        isWednesdayEnabled: data.userSettings.isWednesdayEnabled,
-        isThursdayEnabled: data.userSettings.isThursdayEnabled,
-        isFridayEnabled: data.userSettings.isFridayEnabled,
-        isSaturdayEnabled: data.userSettings.isSaturdayEnabled,
-        isSundayEnabled: data.userSettings.isSundayEnabled,
-        officeArrivalTime: data.userSettings.officeArrivalTime
-      })
-    }).done(res => {
-      console.log(this.state.officeArrivalTime);
-    })
-  }
+  //   $.get(`${MESSENGER_API_URL}/user-settings?senderId=2052050591581851`, (data) => {
+  //     console.log(data);
+  //     this.setState({
+  //       isMondayEnabled: data.userSettings.isMondayEnabled,
+  //       isTuesdayEnabled: data.userSettings.isTuesdayEnabled,
+  //       isWednesdayEnabled: data.userSettings.isWednesdayEnabled,
+  //       isThursdayEnabled: data.userSettings.isThursdayEnabled,
+  //       isFridayEnabled: data.userSettings.isFridayEnabled,
+  //       isSaturdayEnabled: data.userSettings.isSaturdayEnabled,
+  //       isSundayEnabled: data.userSettings.isSundayEnabled,
+  //       officeArrivalTime: data.userSettings.officeArrivalTime
+  //     })
+  //   }).done(res => {
+  //     console.log(this.state.officeArrivalTime);
+  //   })
+  // }
 
   setTime(newTime) {
     this.setState({
@@ -144,13 +144,13 @@ class App extends Component {
   }
 
   render() {
-    if (this.state.isLoading) {
-      return null;
-    }
+    // if (this.state.isLoading) {
+    //   return null;
+    // }
     return (
       <div className="App">
         <header className="App-header">
-          <CheckboxLabels
+          <DayCheckboxGroup
             mondayClick={this.mondayClick}
             tuesdayClick={this.tuesdayClick}
             wednesdayClick={this.wednesdayClick}

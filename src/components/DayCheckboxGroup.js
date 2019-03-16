@@ -4,7 +4,7 @@ import DayButton from './DayButton';
 
 
 
-class CheckboxLabels extends React.Component {
+class DayCheckboxGroup extends React.Component {
 
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
@@ -24,8 +24,8 @@ class CheckboxLabels extends React.Component {
   }
 }
 
-CheckboxLabels.propTypes = {
+DayCheckboxGroup.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default (CheckboxLabels);
+export default (DayCheckboxGroup);
