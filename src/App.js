@@ -6,6 +6,7 @@ import CheckboxLabels from './components/CheckboxLabels';
 import $ from "jquery";
 import SubmitButton from "./components/SubmitButton"
 import qs from 'qs'
+import Heading from "./components/Heading.tsx";
 
 class App extends Component {
   constructor(props) {
@@ -124,17 +125,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
           <CheckboxLabels
             mondayClick={this.mondayClick}
             tuesdayClick={this.tuesdayClick}
             wednesdayClick={this.wednesdayClick}
             thursdayClick={this.thursdayClick}
             fridayClick={this.fridayClick}
-            satudrdayClick={this.satudrdayClick}
+            saturdayClick={this.saturdayClick}
             sundayClick={this.sundayClick}
           />
           <TimePickers setTime={this.setTime}  />
