@@ -114,7 +114,7 @@ class App extends Component {
         'Content-Type': 'application/json',
       },
       success: function (msg) {
-        alert("Data Saved: " + msg);
+        window.close();
       }
     })
   }
