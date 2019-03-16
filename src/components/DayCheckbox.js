@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class DayButton extends Component {
+class DayCheckbox extends Component {
 
     render() {
         return (<button
@@ -12,4 +12,4 @@ class DayButton extends Component {
     }
 }
 
-export default DayButton;
+export default DayCheckbox;
