@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background: rgb(231, 232, 236);
+  background: rgb(216, 216, 216);
 }
 
 .App-logo {
@@ -67,7 +67,7 @@ margin: 20px;
 }
 
 .btn-unclicked{
-  background: rgb(255, 255, 255);
+  background: rgb(216, 216, 216);
     color: rgb(0, 0, 0);
-    border:3px solid #fff;
+    border:3px solid #d8d8d8;
 }

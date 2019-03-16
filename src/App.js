@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import TimePickers from "./components/TimePickers"
+import TimePicker from "./components/TimePicker"
 import DayCheckboxGroup from './components/DayCheckboxGroup';
 import $ from "jquery";
 import SubmitButton from "./components/SubmitButton"
@@ -107,7 +107,7 @@ class App extends Component {
     ]
   }
 
-  handleSubmit() {
+  handleSubmit = () => {
     console.log("Button Pressed");
     var userSettings = {
       officeArrivalTime: this.state.officeArrivalTime,
@@ -160,7 +160,7 @@ class App extends Component {
             sunday={this.state.isSundayEnabled}
             days={this.getDaysArray()}
           />
-          <TimePickers orgiginalTime={this.state.officeArrivalTime} setTime={this.setTime} />
+          <TimePicker orgiginalTime={this.state.officeArrivalTime} setTime={this.setTime} />
           <SubmitButton handleSubmit={this.handleSubmit} />
         </header>
       </div>

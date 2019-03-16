@@ -15,13 +15,10 @@ const styles = theme => ({
   },
 });
 
-function TimePickers(props) {
+function TimePicker(props) {
   const { classes } = props;
 
- 
-
   function setNewTime(event) {
-    console.log("New time is " + event.target.value)
     props.setTime(event.target.value);
   }
 
@@ -35,6 +32,7 @@ function TimePickers(props) {
         className={classes.textField}
         InputLabelProps={{
           shrink: true,
+          color : "black"
         }}
         inputProps={{
           step: 300, // 5 min
@@ -47,8 +45,8 @@ function TimePickers(props) {
   );
 }
 
-TimePickers.propTypes = {
+TimePicker.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TimePickers);
+export default withStyles(styles)(TimePicker);
