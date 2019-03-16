@@ -22,21 +22,6 @@ class App extends Component {
       isSaturdayEnabled: false,
       isSundayEnabled: false
     }
-
-
-    //Bind 'this' to functions 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.mondayClick = this.mondayClick.bind(this);
-    this.tuesdayClick = this.tuesdayClick.bind(this);
-    this.wednesdayClick = this.wednesdayClick.bind(this);
-    this.thursdayClick = this.thursdayClick.bind(this);
-    this.fridayClick = this.fridayClick.bind(this);
-    this.saturdayClick = this.saturdayClick.bind(this);
-    this.sundayClick = this.sundayClick.bind(this);
-    this.setTime = this.setTime.bind(this);
-    this.getDayObject = this.getDayObject.bind(this);
-
-
   }
 
   // componentDidMount = () => {
@@ -58,57 +43,49 @@ class App extends Component {
   //   })
   // }
 
-  setTime(newTime) {
+  setTime = (newTime) => {
     this.setState({
       officeArrivalTime: newTime
     })
   }
 
-  mondayClick() {
+  mondayClick = () => {
     this.setState({
       isMondayEnabled: this.state.isMondayEnabled ? false : true
-    }, function () {
-      console.log(this.state.isMondayEnabled);
     })
   }
 
-
-  tuesdayClick() {
+  tuesdayClick = () => {
     this.setState({
       isTuesdayEnabled: this.state.isTuesdayEnabled ? false : true
     })
   }
 
-
-  wednesdayClick() {
+  wednesdayClick = () => {
     this.setState({
       isWednesdayEnabled: this.state.isWednesdayEnabled ? false : true
     })
   }
 
-
-  thursdayClick() {
+  thursdayClick = () => {
     this.setState({
       isThursdayEnabled: this.state.isThursdayEnabled ? false : true
     })
   }
 
-
-  fridayClick() {
+  fridayClick = () => {
     this.setState({
       isFridayEnabled: this.state.isFridayEnabled ? false : true
     })
   }
 
-
-  saturdayClick() {
+  saturdayClick = () => {
     this.setState({
       isSaturdayEnabled: this.state.isSaturdayEnabled ? false : true
     })
   }
 
-
-  sundayClick() {
+  sundayClick = () => {
     this.setState({
       isSundayEnabled: this.state.isSundayEnabled ? false : true
     })
@@ -129,8 +106,6 @@ class App extends Component {
       this.getDayObject(this.state.isSundayEnabled,this.sundayClick,"S")
     ]
   }
-
-  
 
   handleSubmit() {
     console.log("Button Pressed");
@@ -168,6 +143,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+        <a href="zappy://zappy.chat
+        "> CLick me</a>
           <DayCheckboxGroup
             mondayClick={this.mondayClick}
             tuesdayClick={this.tuesdayClick}
