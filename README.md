@@ -1,3 +1,6 @@
+# GigaWhat &mdash; chatbot time picker
+Hackathon repo for Zappy chatbot time picker
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
