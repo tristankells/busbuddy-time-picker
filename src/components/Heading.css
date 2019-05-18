@@ -3,8 +3,7 @@
     width: 50%;
     margin-top: 5%;
 }
-/*Source https://codepen.io/beumsk/pen/ZvjLgv?page=4 */
-@import url('https://fonts.googleapis.com/css?family=Rajdhani');
+
 
 .anim {
   width: 100px;
@@ -49,7 +48,7 @@
 }
 
 .text {
-  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 64px;
   font-weight: bold;
   letter-spacing: 0.2em;

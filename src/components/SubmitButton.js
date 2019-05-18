@@ -17,7 +17,7 @@ function SubmitButton(props) {
   return (
     <div>
       <Button onClick={props.handleSubmit} variant="contained" className={classes.button}  
-      style = {{width: 250, background: "black", color:"white", fontWeight: "bolder", fontSize:"18px", letterSpacing:"2px"}}
+      style = {{width: 336, marginTop: "2rem", background: "black", color:"yellow", fontWeight: "bolder", fontFamily: "Rubik", fontSize:"18px", letterSpacing:"2px"}}
       >
         Go
       </Button>
