@@ -1,6 +1,10 @@
+
+
 .App {
+  font-family: rubik;
   text-align: center;
-  background: rgb(216, 216, 216);
+  background:#fefff0;
+  -webkit-transition: all 1s;
 }
 
 .App-logo {
@@ -41,33 +45,55 @@
     transform: rotate(360deg);
   }
 }
+.btn{
+    font-family: 'Rubik', sans-serif;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 16px;
+  border-radius: 12%;
+  margin: 4px;
+  padding: 0%;
+  font-weight: bolder;
+  align-content: initial;
+
+  outline: none;
+
+  background: #fff;
+}
 
 .btn-clicked{
-  background: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  border:3px solid rgb(0, 0, 0);
+  background: rgb(255, 255, 0);
+  color: rgb(0, 0, 0));
+  border:2px solid #000;
+    box-shadow: 4px 4px 0px 1px #000;
+  /* box-shadow: #ffff00 3px 3px; */
 }
 
-.btn{
-    width: 28px;
-    height: 28px;
-    font-size: 11px;
-    line-height: px;
-    border-radius: 50%;
-    margin: 4px;
-    padding: 0%;
-    font-weight: bolder;
-    align-content: initial;
-    box-shadow: 0px 0px 0px 1px rgb(3, 3, 3);
-    outline: none;
-}
 
 .btn-group{
-margin: 20px;
+margin-left: 0rem;
+margin-bottom: 2rem;
 }
 
 .btn-unclicked{
-  background: rgb(216, 216, 216);
-    color: rgb(0, 0, 0);
-    border:3px solid #d8d8d8;
+
+  background: #fff;
+  color: rgb(0, 0, 0);
+    border:2px solid #fff;
+    
+    box-shadow: inset 2px 2px 0px 1px #ffff9e;
+
+    box-shadow: inset 4px 4px 0px #ffff9e;
+    /* box-shadow: #ffff95 1px 1px; */
+
 }
+
+p {
+  color: black;
+  font-weight: 900;
+  text-align: left;
+  font-size: 1rem;
+  width: 336px;
+}
+
+.potato {  font-family: "Rubik" !important;}

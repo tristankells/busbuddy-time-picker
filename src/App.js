@@ -1,24 +1,25 @@
-import React, { Component } from 'react';
-import './App.css';
-import TimePicker from "./components/TimePicker"
-import DayCheckboxGroup from './components/DayCheckboxGroup';
-import $ from "jquery";
-import SubmitButton from "./components/SubmitButton"
+import React, { Component } from 'react'
+import './App.css'
+import TimePicker from './components/TimePicker'
+import DayCheckboxGroup from './components/DayCheckboxGroup'
+import $ from 'jquery'
+import SubmitButton from './components/SubmitButton'
 import qs from 'qs'
 const MESSENGER_API_URL = 'https://api.zappy.chat'
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       isLoading: true,
-      officeArrivalTime: "07:30",
-      senderId: qs.parse(window.location.search, { ignoreQueryPrefix: true }).senderId,
-      isMondayEnabled: false,
-      isTuesdayEnabled: false,
-      isWednesdayEnabled: false,
-      isThursdayEnabled: false,
-      isFridayEnabled: false,
+      officeArrivalTime: '07:30',
+      senderId: qs.parse(window.location.search, { ignoreQueryPrefix: true })
+        .senderId,
+      isMondayEnabled: true,
+      isTuesdayEnabled: true,
+      isWednesdayEnabled: true,
+      isThursdayEnabled: true,
+      isFridayEnabled: true,
       isSaturdayEnabled: false,
       isSundayEnabled: false
     }
@@ -43,7 +44,7 @@ class App extends Component {
   //   })
   // }
 
-  setTime = (newTime) => {
+  setTime = newTime => {
     this.setState({
       officeArrivalTime: newTime
     })
@@ -51,64 +52,68 @@ class App extends Component {
 
   mondayClick = () => {
     this.setState({
-      isMondayEnabled: this.state.isMondayEnabled ? false : true
+      isMondayEnabled: !this.state.isMondayEnabled
     })
   }
 
   tuesdayClick = () => {
     this.setState({
-      isTuesdayEnabled: this.state.isTuesdayEnabled ? false : true
+      isTuesdayEnabled: !this.state.isTuesdayEnabled
     })
   }
 
   wednesdayClick = () => {
     this.setState({
-      isWednesdayEnabled: this.state.isWednesdayEnabled ? false : true
+      isWednesdayEnabled: !this.state.isWednesdayEnabled
     })
   }
 
   thursdayClick = () => {
     this.setState({
-      isThursdayEnabled: this.state.isThursdayEnabled ? false : true
+      isThursdayEnabled: !this.state.isThursdayEnabled
     })
   }
 
   fridayClick = () => {
     this.setState({
-      isFridayEnabled: this.state.isFridayEnabled ? false : true
+      isFridayEnabled: !this.state.isFridayEnabled
     })
   }
 
   saturdayClick = () => {
     this.setState({
-      isSaturdayEnabled: this.state.isSaturdayEnabled ? false : true
+      isSaturdayEnabled: !this.state.isSaturdayEnabled
     })
   }
 
   sundayClick = () => {
     this.setState({
-      isSundayEnabled: this.state.isSundayEnabled ? false : true
+      isSundayEnabled: !this.state.isSundayEnabled
     })
   }
 
-  getDayObject =(clicked, click, text) => {
+  getDayObject = (clicked, click, text) => {
     return { clicked: clicked, click: click, text: text }
   }
 
-  getDaysArray() {
+  getDaysArray () {
     return [
-      this.getDayObject(this.state.isMondayEnabled,this.mondayClick,"M"),
-      this.getDayObject(this.state.isTuesdayEnabled,this.tuesdayClick,"T"),
-      this.getDayObject(this.state.isWednesdayEnabled,this.wednesdayClick,"W"),
-      this.getDayObject(this.state.isThursdayEnabled,this.thursdayClick,"T"),
-      this.getDayObject(this.state.isFridayEnabled,this.fridayClick,"F"),
-      this.getDayObject(this.state.isSaturdayEnabled,this.saturdayClick,"S"),
-      this.getDayObject(this.state.isSundayEnabled,this.sundayClick,"S")
+      this.getDayObject(this.state.isMondayEnabled, this.mondayClick, 'M'),
+      this.getDayObject(this.state.isTuesdayEnabled, this.tuesdayClick, 'T'),
+      this.getDayObject(
+        this.state.isWednesdayEnabled,
+        this.wednesdayClick,
+        'W'
+      ),
+      this.getDayObject(this.state.isThursdayEnabled, this.thursdayClick, 'T'),
+      this.getDayObject(this.state.isFridayEnabled, this.fridayClick, 'F'),
+      this.getDayObject(this.state.isSaturdayEnabled, this.saturdayClick, 'S'),
+      this.getDayObject(this.state.isSundayEnabled, this.sundayClick, 'S')
     ]
   }
 
   handleSubmit = () => {
-    console.log("Button Pressed");
+    console.log('Button Pressed')
     var userSettings = {
       officeArrivalTime: this.state.officeArrivalTime,
       isMondayEnabled: this.state.isMondayEnabled,
@@ -119,30 +124,34 @@ class App extends Component {
       isSaturdayEnabled: this.state.isSaturdayEnabled,
       isSundayEnabled: this.state.isSundayEnabled,
       senderId: this.state.senderId
-    };
-    ////////AJAX
+    }
+    /// /////AJAX
     $.ajax({
-      method: "PUT",
+      method: 'PUT',
       url: `${MESSENGER_API_URL}/user-settings`,
       data: JSON.stringify({
         userSettings
       }),
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json'
       },
       success: function (msg) {
-        window.close();
+        window.close()
       }
     })
   }
 
-  render() {
+  render () {
     // if (this.state.isLoading) {
     //   return null;
     // }
     return (
-      <div className="App">
-        <header className="App-header">
+      <div className='App'>
+      <link href="https://fonts.googleapis.com/css?family=Rubik:400,700,900" rel="stylesheet"></link>
+
+        <header className='App-header'>
+        <p>To get started, when do you work?</p>
+
           <DayCheckboxGroup
             mondayClick={this.mondayClick}
             tuesdayClick={this.tuesdayClick}
@@ -160,12 +169,15 @@ class App extends Component {
             sunday={this.state.isSundayEnabled}
             days={this.getDaysArray()}
           />
-          <TimePicker orgiginalTime={this.state.officeArrivalTime} setTime={this.setTime} />
+          <TimePicker
+            originalTime={this.state.officeArrivalTime}
+            setTime={this.setTime}
+          />
           <SubmitButton handleSubmit={this.handleSubmit} />
         </header>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
